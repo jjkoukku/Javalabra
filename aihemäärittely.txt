@@ -1,0 +1,15 @@
+Aihemäärittely
+
+Aihe: Risk -tyylinen strategiapeli, jonka taustamiljöö ja teema Helsingin ympäristössä.
+
+Käyttäjiä on yksi Pelaaja
+
+Toiminnot:
+
+Jakaa saamansa yksiköt omistamilleen alueille
+
+Hyökätä yksiköillään toiselle alueelle
+
+
+
+
