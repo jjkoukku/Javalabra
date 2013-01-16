@@ -14,6 +14,9 @@ public class BtHelsinki {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Peli peli = new Peli(3,3);
+        peli.setPelaaja1(new Pelaaja("Jaska", false));
+        peli.setPelaaja1(new Pelaaja("Marko", true));
+        peli.tulostaRuudukko();
     }
 }
