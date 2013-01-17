@@ -15,7 +15,13 @@ public class BtHelsinki {
      */
     public static void main(String[] args) {
         Pelilauta pelilauta = new Pelilauta(3,3);
-        Peli peli = new Peli(pelilauta);
+        
+        Pelaaja pelaaja1 = new Pelaaja("sininen");
+        Pelaaja pelaaja2 = new Pelaaja("punainen");
+        
+        Peli peli = new Peli(pelilauta, pelaaja1, pelaaja2);
+        
+        
         pelilauta.tulostaRuudukko();
         
     }

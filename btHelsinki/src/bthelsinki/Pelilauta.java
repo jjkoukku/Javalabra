@@ -8,7 +8,6 @@ private int leveys;
 private int korkeus;
 private ArrayList<Ruutu> ruudukko = new ArrayList<Ruutu>();
 
-
     public Pelilauta(int leveys,int korkeus) {
        
        this.leveys = leveys;

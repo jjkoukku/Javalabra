@@ -7,9 +7,11 @@ private boolean pelattava = true;
 private int yksikot=0;
 private Pelaaja omistaja;
 
+
     public Ruutu(int x, int y){
         this.x = x;
         this.y = y;
+        omistaja = new Pelaaja(); // luo tyhjien ruutujen "harmaan" pelaajan.
     }
 
     public int getX() {
