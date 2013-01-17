@@ -6,7 +6,7 @@ public class Peli{
 
 private int leveys;
 private int korkeus;
-private ArrayList<Ruutu> ruudukko = new ArrayList<>();
+private ArrayList<Ruutu> ruudukko = new ArrayList<Ruutu>();
 private Pelaaja pelaaja1;
 private Pelaaja pelaaja2;
 
