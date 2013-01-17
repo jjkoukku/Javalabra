@@ -14,9 +14,8 @@ public class BtHelsinki {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Peli peli = new Peli(3,3);
-        peli.setPelaaja1(new Pelaaja("Jaska", false));
-        peli.setPelaaja1(new Pelaaja("Marko", true));
-        peli.tulostaRuudukko();
+        Pelilauta pelilauta = new Pelilauta(3,3);
+        
+        pelilauta.tulostaRuudukko();
     }
 }
