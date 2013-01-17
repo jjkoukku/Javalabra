@@ -1,17 +1,16 @@
 package bthelsinki;
 public class Pelaaja{
     
-    private String nimi = "pelaaja";
-    private boolean ai = false;
+    private String vari;
+
     
-    public Pelaaja(String nimi, boolean ai) {
-        this.nimi = nimi;
-        this.ai= ai;
+    public Pelaaja(String vari) {
+        this.vari = vari;     
     }
 
     @Override
     public String toString() {
-        return nimi;
+        return this.vari;
     }
     
 }

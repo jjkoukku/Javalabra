@@ -19,11 +19,26 @@ private ArrayList<Ruutu> ruudukko = new ArrayList<Ruutu>();
             }
         }
     }
+
+    public int getKorkeus() {
+        return korkeus;
+    }
+
+    public int getLeveys() {
+        return leveys;
+    }
+    
+    
     
     public boolean muutaYksikoita (int x, int y, int uusiluku) {
         int jluku = this.naatitJarjluvuks(x, y);
         ruudukko.get(jluku).setYksikot(uusiluku);
-        return false;
+        return true;
+    }
+    
+    public boolean setOmistaja(int x, int y, Pelaaja pelaaja){        
+        ruudukko.get(this.naatitJarjluvuks(x, y)).setOmistaja(pelaaja);
+        return true;
     }
     
     public void tulostaRuudukko(){

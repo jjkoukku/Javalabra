@@ -31,6 +31,10 @@ private Pelaaja omistaja;
     public Pelaaja getOmistaja() {
         return omistaja;
     }
+
+    public void setOmistaja(Pelaaja omistaja) {
+        this.omistaja = omistaja;
+    }
     
     
     
