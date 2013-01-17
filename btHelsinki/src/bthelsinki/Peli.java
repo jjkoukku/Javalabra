@@ -10,7 +10,10 @@ private Pelilauta pelilauta;
     
     public Peli(Pelilauta pelilauta) {
         this.pelilauta = pelilauta;
+        pelilauta.muutaYksikoita(1, 1, 10);
+        pelilauta.muutaYksikoita(3, 3, 10);
     }
+        
     
     
 }

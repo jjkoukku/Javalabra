@@ -19,6 +19,19 @@ private Pelaaja omistaja;
     public int getY() {
         return y;
     }
+
+    public void setYksikot(int yksikot) {
+        this.yksikot = yksikot;
+    }
+
+    public int getYksikot() {
+        return yksikot;
+    }
+
+    public Pelaaja getOmistaja() {
+        return omistaja;
+    }
+    
     
     
     

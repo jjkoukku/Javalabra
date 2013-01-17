@@ -15,7 +15,8 @@ public class BtHelsinki {
      */
     public static void main(String[] args) {
         Pelilauta pelilauta = new Pelilauta(3,3);
-        
+        Peli peli = new Peli(pelilauta);
         pelilauta.tulostaRuudukko();
+        
     }
 }
