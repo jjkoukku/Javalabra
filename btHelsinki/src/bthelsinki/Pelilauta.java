@@ -28,29 +28,21 @@ private ArrayList<Ruutu> ruudukko = new ArrayList<Ruutu>();
     }
     
     
-    
-    public boolean muutaYksikoita (int x, int y, int uusiluku) {
-        int jluku = this.naatitJarjluvuks(x, y);
-        ruudukko.get(jluku).setYksikot(uusiluku);
-        return true;
+    public Ruutu getRuutu(int x,  int y){            
+        return ruudukko.get(this.naatitJarjluvuks(x, y));
     }
     
-    public boolean setOmistaja(int x, int y, Pelaaja pelaaja){        
-        ruudukko.get(this.naatitJarjluvuks(x, y)).setOmistaja(pelaaja);
-        return true;
-    }
-    
-    public void tulostaRuudukko(){
-        
-        for (int i = 0; i < leveys*korkeus - 1; i++) {        
-            System.out.print(ruudukko.get(i) + " ");
-        if (ruudukko.get(i).getX()<ruudukko.get(i+1).getX()) {
-            System.out.println("");
-        }
-
-        }
-        System.out.print(ruudukko.get(leveys*korkeus-1));
-    }
+//    public void tulostaRuudukko(){
+//        
+//        for (int i = 0; i < leveys*korkeus - 1; i++) {        
+//            System.out.print(ruudukko.get(i) + " ");
+//        if (ruudukko.get(i).getX()<ruudukko.get(i+1).getX()) {
+//            System.out.println("");
+//        }
+//
+//        }
+//        System.out.print(ruudukko.get(leveys*korkeus-1));
+//    }
     
     private int naatitJarjluvuks(int x, int y) { // sisainen metodi, palauttaa x,y koordinaatit
     int luku = (y-1)*this.leveys + x - 1;        // ruudukon järjestyslukuna ylävasemmalta lukien. Esim

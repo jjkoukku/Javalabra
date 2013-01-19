@@ -10,12 +10,16 @@ public class Pelaaja{
     }
     
     public Pelaaja() {            // tyhjien ruutujen käyttäjä luodaan tällä konstruktorilla
-        this.vari = "harmaa";
+        this.vari = "h";
         tyhjaRuutu = true;
     }
 
     public boolean isTyhjaRuutu() {
         return tyhjaRuutu;
+    }
+
+    public String getVari() {
+        return vari;
     }
     
     
