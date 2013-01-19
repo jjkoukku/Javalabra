@@ -4,7 +4,7 @@
  */
 package bthelsinki;
 
-import txtGui.TxtUI;
+import txtUI.TxtUI;
 
 /**
  *
@@ -20,12 +20,11 @@ public class BtHelsinki {
         
         Pelaaja pelaaja1 = new Pelaaja("S");
         Pelaaja pelaaja2 = new Pelaaja("P");
+        TxtUI gui = new TxtUI();
+        Peli peli = new Peli(pelilauta, gui, pelaaja1, pelaaja2);
+        peli.aloita();
         
-        Peli peli = new Peli(pelilauta, pelaaja1, pelaaja2);
-        
-        TxtUI gui = new TxtUI(peli);
-        
-        gui.naytaPelilauta();
+ 
         
     }
 }
