@@ -1,3 +1,8 @@
 PVM		Aika		Ajankäytönkohde
-16.10.13		1h		Gitin käyttö ja projektin alullepano
+16.1.13		1h		Gitin käyttö ja projektin alullepano
+16.1.13		1h		Sovelluslogiikan koodaus
+17.1.13		2h		Sovelluslogiikan koodaus
+18.1.13		3h		Sovelluslogiikan koodaus
+20.1.13		2h		Sovelluslogiikan koodaus
+20.1.13		2h		Junit testaaminen
 

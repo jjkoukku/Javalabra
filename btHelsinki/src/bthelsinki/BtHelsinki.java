@@ -20,10 +20,8 @@ public class BtHelsinki {
         Pelaaja pelaaja1 = new Pelaaja("S");
         Pelaaja pelaaja2 = new Pelaaja("P");        
         Peli peli = new Peli(pelilauta,pelaaja1, pelaaja2);
-        TxtUI gui = new TxtUI(peli);
-        gui.aloita();
-        
- 
-        
+        TxtUI ui = new TxtUI(peli);
+        ui.aloita();
+      
     }
 }

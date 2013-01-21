@@ -38,7 +38,7 @@ public class Peli {
         if (vuorossaOleva == pelaaja1){
             vuorossaOleva = pelaaja2;
         }
-        if (vuorossaOleva == pelaaja2){
+        else {
             vuorossaOleva = pelaaja1;
         }
     }

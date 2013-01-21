@@ -13,7 +13,14 @@ private Pelaaja omistaja;
         this.y = y;
         omistaja = new Pelaaja(); // luo tyhjien ruutujen "harmaan" pelaajan.
     }
-
+    
+    public Ruutu(){ // ruututyyppi, joka palautetaan kun yritetään hakea ulkopuolista ruutua
+        this.x = -100;
+        this.y = -100;
+        omistaja = new Pelaaja(); // luo tyhjien ruutujen "harmaan" pelaajan.
+        pelattava= false;
+    }
+    
     public int getX() {
         return x;
     }
@@ -21,10 +28,15 @@ private Pelaaja omistaja;
     public int getY() {
         return y;
     }
-
+    
+    public boolean getPelattava(){
+        return pelattava;
+    }
+    
     public void setYksikot(int yksikot) {
         this.yksikot = yksikot;
     }
+    
 
     public int getYksikot() {
         return yksikot;
