@@ -4,6 +4,10 @@
  */
 package txtUI;
 
+import bthelsinki.Pelaaja;
+import bthelsinki.Peli;
+import bthelsinki.Pelilauta;
+
 /**
  *
  * @author joonas
@@ -11,7 +15,11 @@ package txtUI;
 public class main {
     
     public static void main(String[] args) {
-        TxtUI g = new TxtUI();
+        Pelilauta pelilauta = new Pelilauta(3,3);        
+        Pelaaja pelaaja1 = new Pelaaja("S");
+        Pelaaja pelaaja2 = new Pelaaja("P");        
+        Peli peli = new Peli(pelilauta,pelaaja1, pelaaja2);
+        TxtUI g = new TxtUI(peli);
         int[] testitaulu = g.askKoordinaatit();
         int testimaara = g.askMaara();
         System.out.println("");

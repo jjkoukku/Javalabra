@@ -16,6 +16,7 @@ public class Peli {
     public Peli(Pelilauta pelilauta, Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelilauta = pelilauta;
         this.pelaaja1 = pelaaja1;
+        vuorossaOleva = pelaaja1;
         this.pelaaja2 = pelaaja2;
         Ruutu alRuutu1pe = pelilauta.getRuutu(1, 1); //aloitusruudut vastakkaisissa reunoissa.
         Ruutu alRuutu2pe = pelilauta.getRuutu(pelilauta.getLeveys(), pelilauta.getKorkeus());
@@ -42,9 +43,9 @@ public class Peli {
         }
     }
     
-    private boolean vuoro(Pelaaja pelaaja) {
-        
-        return false;
+    public Siirto siirra(int[] lahto, int[] kohde, int maara) {
+        Siirto siirtotiedot = pelilauta.siirtokasky(lahto, kohde, maara, vuorossaOleva);
+        return siirtotiedot;
     }
     
 }

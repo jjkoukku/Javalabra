@@ -5,9 +5,24 @@ import bthelsinki.Peli;
 
 public class TxtUI {
 
+    Peli peli;
     private Scanner lukija = new Scanner(System.in);
 
-    public TxtUI() {
+    public TxtUI(Peli peli) {
+        this.peli = peli;
+    }
+
+    public void aloita() {
+        while (true) {
+            this.naytaPelilauta(peli);
+            this.iVuoronAlku(peli.getvuorossaOleva().toString());
+            while(this.askLopetatkoVuoron()){
+                this.naytaPelilauta(peli);
+                peli.siirra(this.askKoordinaatit(), this.askKoordinaatit(), this.askMaara());
+                this.naytaPelilauta(peli);
+            }
+            peli.lopetaVuoro();
+        }
     }
 
     public boolean askAloita() {
@@ -44,12 +59,12 @@ public class TxtUI {
         System.out.println("Annoit määrän " + maara);
         return maara;
     }
-    
+
     public boolean askLopetatkoVuoron() {
         boolean jatkaako = true;
         System.out.println("Anna 0, jos et halua siirtää");
-        if (lukija.nextInt()==0){            
-        jatkaako = false;
+        if (lukija.nextInt() == 0) {
+            jatkaako = false;
         }
         return jatkaako;
     }
