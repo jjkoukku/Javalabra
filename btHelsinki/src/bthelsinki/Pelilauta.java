@@ -7,15 +7,16 @@ public class Pelilauta {
 
     private int leveys;
     private int korkeus;
-    private ArrayList<Ruutu> ruudukko = new ArrayList<Ruutu>();
+    private Ruutu[][] ruudukko;
 
     public Pelilauta(int leveys, int korkeus) {
 
         this.leveys = leveys;
         this.korkeus = korkeus;
+        ruudukko = new Ruutu[leveys][korkeus];
         for (int i = 0; i < leveys; i++) {
             for (int j = 0; j < korkeus; j++) {
-                ruudukko.add(new Ruutu(i, j));
+                ruudukko[i][j] = new Ruutu(i, j);
             }
         }
     }
@@ -29,7 +30,7 @@ public class Pelilauta {
     }
 
     public Ruutu getRuutu(int x, int y) {
-        return ruudukko.get(this.naatitJarjluvuks(x, y));
+        return ruudukko[x-1][y-1];
     }
 
     public void siirto(Ruutu lahto, Ruutu loppu, int maara, Pelaaja pelaaja) {
@@ -66,11 +67,11 @@ public class Pelilauta {
         return liikkuuko;
     }
 
-    private int naatitJarjluvuks(int x, int y) { // sisainen metodi, palauttaa x,y koordinaatit
-        int luku = (y - 1) * this.leveys + x - 1;        // ruudukon järjestyslukuna ylävasemmalta lukien. Esim
-        // 3x3 ruudukossa 1 2 3
-        //                4 5 6
-        //                7 8 9
-        return luku;
-    }
+//    private int naatitJarjluvuks(int x, int y) { // sisainen metodi, palauttaa x,y koordinaatit
+//        int luku = (y - 1) * this.leveys + x - 1;        // ruudukon järjestyslukuna ylävasemmalta lukien. Esim
+//        // 3x3 ruudukossa 1 2 3
+//        //                4 5 6
+//        //                7 8 9
+//        return luku;
+//    }
 }
