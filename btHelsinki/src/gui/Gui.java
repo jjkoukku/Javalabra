@@ -31,11 +31,15 @@ public class Gui implements Runnable {
     private void luoKomponentit(Container container) {
         BorderLayout layout = new BorderLayout();
         container.setLayout(layout);
-      //luodaan "kartta"
-        Ruudukko pelikartta = new Ruudukko(peli);
-        container.add(pelikartta.getContainer(), BorderLayout.CENTER);
-      // ohjauspaneeli, josta vuoroa vaihdetaan ja syötetään koordinaatteja  
+       
+       // ohjauspaneeli, josta vuoroa vaihdetaan ja syötetään koordinaatteja  
         Ohjauspaneeli ohPanel= new Ohjauspaneeli(peli);
+        
+       //luodaan "kartta"
+        Ruudukko pelikartta = new Ruudukko(peli, ohPanel);     
+        
+      //sijoitetaan tavarat ruudukkoon  
+        container.add(pelikartta.getContainer(), BorderLayout.CENTER);
         container.add(ohPanel.getContainer(),BorderLayout.SOUTH);   
     }
 

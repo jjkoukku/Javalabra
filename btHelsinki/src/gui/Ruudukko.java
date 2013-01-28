@@ -12,17 +12,20 @@ public class Ruudukko {
 
     private Container container = new Container();
     private Peli peli;
+    private Ohjauspaneeli ohPanel;
 
-    public Ruudukko(Peli peli) {
+    public Ruudukko(Peli peli, Ohjauspaneeli ohPanel) {
         this.peli = peli;
+        this.ohPanel = ohPanel;
         int korkeus = peli.getPelilauta().getKorkeus();
         int leveys =  peli.getPelilauta().getLeveys();
         GridLayout layout = new GridLayout(korkeus,leveys);
         container.setLayout(layout);        
-        for (int i = 0; i < korkeus*leveys; i++) {
-            container.add(new JTextArea((i + 1)+""));
-        }
-        
+        for (int i = 1; i <= leveys; i++) {
+            for (int j = 1; j <= korkeus; j++) {
+                container.add(new GRuutu(peli, peli.getPelilauta().getRuutu(j, i), ohPanel));
+            }
+        }        
     }
 
     public Container getContainer() {

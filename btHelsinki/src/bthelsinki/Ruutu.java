@@ -9,8 +9,8 @@ private Pelaaja omistaja;
 
 
     public Ruutu(int x, int y){
-        this.x = x;
-        this.y = y;
+        this.x = x+1;
+        this.y = y+1;
         omistaja = new Pelaaja(); // luo tyhjien ruutujen "harmaan" pelaajan.
     }
     
