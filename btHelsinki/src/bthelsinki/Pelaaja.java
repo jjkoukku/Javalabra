@@ -22,8 +22,6 @@ public class Pelaaja{
         return vari;
     }
     
-    
-    
     @Override
     public String toString() {   // 
         return this.vari;

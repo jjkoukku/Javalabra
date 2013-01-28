@@ -1,16 +1,19 @@
+package gui;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package bthelsinki;
 
-import txtUI.TxtUI;
+
+import javax.swing.SwingUtilities;
+import bthelsinki.*;
 
 /**
  *
  * @author jjkoukku
  */
-public class BtHelsinki {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -20,8 +23,10 @@ public class BtHelsinki {
         Pelaaja pelaaja1 = new Pelaaja("S");
         Pelaaja pelaaja2 = new Pelaaja("P");        
         Peli peli = new Peli(pelilauta,pelaaja1, pelaaja2);
-        TxtUI ui = new TxtUI(peli);
-        ui.aloita();
+        Gui gui = new Gui(peli);
+        SwingUtilities.invokeLater(gui);
+
       
     }
 }
+
