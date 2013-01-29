@@ -44,8 +44,8 @@ public class Ruudukko {
     }
     
     public void paivitaRuudut(){
-        for (int i = 0; i < leveys+1; i++) {
-            for (int j = 0; j < korkeus+1; j++) {
+        for (int i = 1; i < leveys+1; i++) {
+            for (int j = 1; j < korkeus+1; j++) {
                 gRuudukko[i][j].paivita();
             }
         }

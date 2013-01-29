@@ -9,19 +9,19 @@ import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 import bthelsinki.Peli;
 import java.awt.BorderLayout;
-public class Gui implements Runnable {
+public class PaaIkkuna implements Runnable {
 
     private JFrame frame;
     private Peli peli;
     
-    public Gui(Peli peli) {
+    public PaaIkkuna(Peli peli) {
         this.peli = peli;
     }
 
     @Override
     public void run() {
         frame = new JFrame("Battle of Ruudukko");
-        frame.setPreferredSize(new Dimension(900, 900));
+        frame.setPreferredSize(new Dimension(600, 500));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         luoKomponentit(frame.getContentPane());
         frame.pack();
@@ -37,7 +37,7 @@ public class Gui implements Runnable {
         
        //luodaan "kartta"
         Ruudukko pelikartta = new Ruudukko(peli, ohPanel);     
-        
+        ohPanel.setRuudukko(pelikartta);
       //sijoitetaan tavarat ruudukkoon  
         container.add(pelikartta.getContainer(), BorderLayout.CENTER);
         container.add(ohPanel.getContainer(),BorderLayout.SOUTH);   

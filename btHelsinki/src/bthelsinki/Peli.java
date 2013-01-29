@@ -4,7 +4,6 @@
  */
 package bthelsinki;
 
-import txtUI.TxtUI;
 
 public class Peli {
 

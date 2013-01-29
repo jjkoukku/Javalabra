@@ -1,14 +1,14 @@
 package gui;
 
+import gui.kuuntelijat.RuutuKuuntelija;
 import bthelsinki.Peli;
 import bthelsinki.Ruutu;
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.GridLayout;
+import java.awt.Color;
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 
 
-public class GRuutu extends JLabel  {
+public final class GRuutu extends JLabel  {
     
     private Peli peli;
     private Ruutu ruutu;
@@ -19,12 +19,15 @@ public class GRuutu extends JLabel  {
         this.peli = peli;
         this.ruutu = ruutu;
         this.ohPanel=ohPanel;
-        super.setText(ruutu.toString());
+        this.setOpaque(true);
         this.addMouseListener(new RuutuKuuntelija(this, ohPanel));
+        this.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        this.paivita();        
         }
  
     public void paivita(){
-        super.setText(ruutu.toString());
+        super.setText(""+ruutu.getYksikot());
+        this.setBackground(ruutu.getOmistaja().getVari());
     }
     
     public Ruutu getRuutu(){

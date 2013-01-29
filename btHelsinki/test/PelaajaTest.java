@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import bthelsinki.*;
+import java.awt.Color;
 /**
  *
  * @author jjkoukku
@@ -22,7 +23,7 @@ public class PelaajaTest {
         @Test
     public void testiNimelle() {
      String nimi = "kekkonen";       
-     Pelaaja kekkonen = new Pelaaja(nimi);
+     Pelaaja kekkonen = new Pelaaja(nimi, Color.RED);
      assertEquals(kekkonen.toString(),nimi);
   }
 }

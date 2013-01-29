@@ -6,6 +6,7 @@
 import bthelsinki.Pelaaja;
 import bthelsinki.Peli;
 import bthelsinki.Pelilauta;
+import java.awt.Color;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -28,8 +29,8 @@ public class PeliTest {
     @Before
     public void setUpClass() {
         Pelilauta pelilauta = new Pelilauta(3,3);        
-        pelaaja1 = new Pelaaja("S");
-        pelaaja2 = new Pelaaja("P");        
+        pelaaja1 = new Pelaaja("S",Color.BLUE);
+        pelaaja2 = new Pelaaja("P", Color.RED);        
         peli = new Peli(pelilauta,pelaaja1, pelaaja2);
     }
     

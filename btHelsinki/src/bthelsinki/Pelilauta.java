@@ -35,7 +35,8 @@ public class Pelilauta {
         if ((x <= leveys) && (y <= korkeus) && (x>=1) && (y>=1) ) {
             ruutu = ruudukko[x - 1][y - 1];
         } else {
-            ruutu = virheRuutu; 
+            ruutu = virheRuutu;
+            System.out.println("Viittaus laudan ulkopuoliseen ruutuun");
         }
         return ruutu;
     }
@@ -50,6 +51,7 @@ public class Pelilauta {
             this.siirra(lahtoRuutu, kohdeRuutu, maara, pelaaja);
         } else {
             siirtotiedot = new Siirto(false);
+            System.out.println("Siirto ei ollut laillinen");
         }
 
         return siirtotiedot;
@@ -59,6 +61,7 @@ public class Pelilauta {
         if (pelaaja == loppu.getOmistaja()) { // rauhanomainen siirtyminen
             lahto.setYksikot(lahto.getYksikot() - maara);
             loppu.setYksikot(loppu.getYksikot() + maara);
+            System.out.println("Ei taistelua");
         }
         if (pelaaja != loppu.getOmistaja()) { // Ei todellakaan rauhanomainen siirtyminen
             lahto.setYksikot(lahto.getYksikot() - maara); // sotilaat lähtevät
@@ -90,7 +93,7 @@ public class Pelilauta {
     }
 
     private boolean onkoRiittavastiYksikoita(Ruutu ruutu, int maara) {
-        return (ruutu.getYksikot() >= maara);
+        return (ruutu.getYksikot() >= maara && maara>0);
     }
 
     private boolean onkoOmistaja(Ruutu ruutu, Pelaaja pelaaja) {

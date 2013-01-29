@@ -6,6 +6,7 @@ public class Siirto {
     public Siirto(Ruutu lahto, Ruutu loppu, int maara, Pelaaja pelaaja){
         
     }
+    
     public Siirto(boolean eiToimi){
         onnistuko = false;
     }

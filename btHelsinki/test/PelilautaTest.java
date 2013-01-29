@@ -10,6 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import bthelsinki.*;
+import java.awt.Color;
 /**
  *
  * @author jjkoukku
@@ -22,7 +23,7 @@ public class PelilautaTest {
     int midL= leveys/2;
     int midK = korkeus/2;
     
-    Pelaaja testiMies = new Pelaaja("Kekkonen");
+    Pelaaja testiMies = new Pelaaja("Kekkonen", Color.BLUE);
     
     public PelilautaTest() {
     }

@@ -1,4 +1,4 @@
-package gui;
+package gui.kuuntelijat;
 
 import bthelsinki.Peli;
 import java.awt.event.ActionEvent;
