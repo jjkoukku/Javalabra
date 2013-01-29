@@ -41,7 +41,7 @@ private Ruudukko ruudukko;
         
         vuorossaOlevaPelaaja = new JLabel("Vuorossa on " + peli.getvuorossaOleva().toString());
         JButton lopetaNappi = new JButton("Lopeta vuoro");
-        lopetaNappi.addActionListener(new OhPaVuoroKuuntelija(peli,vuorossaOlevaPelaaja));
+        lopetaNappi.addActionListener(new OhPaVuoroKuuntelija(peli,vuorossaOlevaPelaaja,this));
         
         JButton siirraNappi = new JButton("Siirrä");
         siirraNappi.addActionListener(new SiirraPaKuuntelija(peli,this));

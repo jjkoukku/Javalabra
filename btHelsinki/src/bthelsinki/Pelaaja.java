@@ -5,8 +5,9 @@ import java.awt.Color;
 public class Pelaaja{
     
     private String nimi;
-    boolean tyhjaRuutu = false;
+    private boolean tyhjaRuutu = false;
     private Color vari;
+    private Ruutu hq;
 
     
     public Pelaaja(String nimi, Color vari) { // tavalliselle pelaajalle annetaan nimi
@@ -31,6 +32,16 @@ public class Pelaaja{
     public Color getVari(){
         return this.vari;
     }
+
+    public void setHq(Ruutu hq) {
+        this.hq = hq;
+    }
+
+    public Ruutu getHq() {
+        return hq;
+    }
+    
+    
     
     @Override
     public String toString() {   // 

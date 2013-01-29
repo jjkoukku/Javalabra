@@ -44,10 +44,29 @@ public class PeliTest {
         peli.lopetaVuoro();
         assertEquals(peli.getvuorossaOleva().toString(),pelaaja2.toString());
     }
-    
+    @Test
     public void vuoroSiirtyyOikeinTakaisin(){
         peli.lopetaVuoro();
         peli.lopetaVuoro();
         assertEquals(peli.getvuorossaOleva().toString(),pelaaja1.toString());
     }
+    
+    @Test
+    public void pelinLoppumisMuuttujaToimiiKunEpaTosi(){     
+        assertEquals(peli.loppuukoPeli(),false);
+    }
+    
+    @Test
+    public void pelinLoppumisMuuttujaToimiiKunTosi(){
+        pelaaja1.getHq().setOmistaja(pelaaja2);        
+        assertEquals(peli.loppuukoPeli(),true);
+    }
+    
+    @Test
+    public void yksikoidenlisaaminenToimiiKunVuoroVaihtuu(){
+        peli.lopetaVuoro();
+        peli.lopetaVuoro();
+        assertEquals(pelaaja1.getHq().getYksikot(),19);
+    }
+    
 }

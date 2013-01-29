@@ -40,7 +40,10 @@ public class Pelilauta {
         }
         return ruutu;
     }
-
+    public void luoYksikoita(Ruutu ruutu, int m){
+        ruutu.setYksikot(ruutu.getYksikot()+m);
+    }
+            
     public Siirto siirtokasky(int[] lahto, int[] kohde, int maara, Pelaaja pelaaja) {
         Siirto siirtotiedot;
         Ruutu lahtoRuutu = this.getRuutu(lahto[0], lahto[1]);
@@ -107,5 +110,17 @@ public class Pelilauta {
             liikkuuko = true;
         }
         return liikkuuko;
+    }
+    public int omistettavatRuudutLkm(Pelaaja pelaaja){
+        int lkm =0;
+        for (int i = 1; i <= korkeus; i++) {
+            for (int j = 1; j <= leveys; j++) {
+                if(this.getRuutu(i, j).getOmistaja()==pelaaja){
+                    lkm++;
+                }
+            }
+        }
+        
+        return lkm;
     }
 }

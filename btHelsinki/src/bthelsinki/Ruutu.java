@@ -6,6 +6,7 @@ private int y; //
 private boolean pelattava = true;
 private int yksikot=0;
 private Pelaaja omistaja;
+private Pelaaja hq;
 
 
     public Ruutu(int x, int y){
@@ -35,8 +36,7 @@ private Pelaaja omistaja;
     
     public void setYksikot(int yksikot) {
         this.yksikot = yksikot;
-    }
-    
+    }    
 
     public int getYksikot() {
         return yksikot;
@@ -49,6 +49,15 @@ private Pelaaja omistaja;
     public void setOmistaja(Pelaaja omistaja) {
         this.omistaja = omistaja;
     }
+
+    public void setHq() {
+        this.hq = omistaja;
+    }
+
+    public Pelaaja getHq() {
+        return hq;
+    }
+    
     
     
     

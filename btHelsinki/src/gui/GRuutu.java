@@ -21,7 +21,7 @@ public final class GRuutu extends JLabel  {
         this.ohPanel=ohPanel;
         this.setOpaque(true);
         this.addMouseListener(new RuutuKuuntelija(this, ohPanel));
-        this.setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        this.setBorder(BorderFactory.createLineBorder(Color.black));
         this.paivita();        
         }
  
