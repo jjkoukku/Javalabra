@@ -8,4 +8,7 @@ PVM		Aika		Ajankäytönkohde
 28.1.13		4h		GUI:n koodausta
 29.1.13		3h		GUI:N koodausta
 29.1.13		2h		Sovelluslogiikan koodausta, Junit testien luomista
-29.1.13		0,5h		Luokkakaavion päivitystä, tärkeää pohtimista
+29.1.13		0,5h	Luokkakaavion päivitystä, tärkeää pohtimista
+04.2.13   1h    Javadocsien kirjottamista
+04.2.13   2h    Gui-opettelua
+04.2.13   1h    Refactorointia
