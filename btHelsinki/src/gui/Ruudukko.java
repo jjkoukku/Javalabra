@@ -1,6 +1,7 @@
 package gui;
 
 import bthelsinki.Peli;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
 import java.awt.GridLayout;
@@ -30,6 +31,7 @@ public class Ruudukko {
         this.korkeus = peli.getPelilauta().getKorkeus();
         this.leveys =  peli.getPelilauta().getLeveys();
         GridLayout layout = new GridLayout(korkeus,leveys);
+     
         container.setLayout(layout);
         gRuudukko = new GRuutu[leveys+1][korkeus+1];
         
@@ -37,7 +39,7 @@ public class Ruudukko {
             for (int j = 1; j <= korkeus; j++) {                
                 gRuudukko[i][j]=new GRuutu(peli, peli.getPelilauta().getRuutu(j, i), ohPanel);
                 container.add(gRuudukko[i][j]);
-            }
+            }          
         }        
     }
 

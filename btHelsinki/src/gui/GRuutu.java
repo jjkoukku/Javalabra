@@ -3,9 +3,13 @@ package gui;
 import gui.kuuntelijat.RuutuKuuntelija;
 import bthelsinki.Peli;
 import bthelsinki.Ruutu;
+import gui.kuvahallinta.Taustakuva;
 import java.awt.Color;
+import java.awt.image.ImageConsumer;
+import java.awt.image.ImageProducer;
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 
 public final class GRuutu extends JLabel  {
@@ -24,9 +28,10 @@ public final class GRuutu extends JLabel  {
         this.peli = peli;
         this.ruutu = ruutu;
         this.ohPanel=ohPanel;
-        this.setOpaque(true);
         this.addMouseListener(new RuutuKuuntelija(this, ohPanel));
-        this.setBorder(BorderFactory.createLineBorder(Color.black));
+        this.setHorizontalAlignment(SwingConstants.CENTER);
+        Taustakuva bg = new Taustakuva();
+        this.imageUpdate(bg.getImg(), WIDTH, TOP, TOP, TOP, TOP);
         this.paivita();        
         }
  
@@ -36,7 +41,8 @@ public final class GRuutu extends JLabel  {
     
     public void paivita(){
         super.setText(""+ruutu.getYksikot());
-        this.setBackground(ruutu.getOmistaja().getVari());
+        this.setBorder(BorderFactory.createLineBorder(ruutu.getOmistaja().getVari(),5));
+
     }
     
     /**

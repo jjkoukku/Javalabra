@@ -9,6 +9,7 @@ import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 import bthelsinki.Peli;
 import java.awt.BorderLayout;
+import gui.kuvahallinta.Taustakuva;
 public class PaaIkkuna implements Runnable {
 
     private JFrame frame;
@@ -44,14 +45,12 @@ public class PaaIkkuna implements Runnable {
        //luodaan "kartta"
         Ruudukko pelikartta = new Ruudukko(peli, ohPanel);     
         ohPanel.setRuudukko(pelikartta);
-      //sijoitetaan tavarat ruudukkoon  
+      //sijoitetaan tavarat ruudukkoon
         container.add(pelikartta.getContainer(), BorderLayout.CENTER);
-        container.add(ohPanel.getContainer(),BorderLayout.SOUTH);   
+        container.add(ohPanel.getContainer(),BorderLayout.SOUTH);
     }
 
-//    public JFrame getFrame() {
-//        return frame;
-//    }
+
     
     
 }
