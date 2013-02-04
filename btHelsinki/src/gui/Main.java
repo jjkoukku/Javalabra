@@ -20,6 +20,7 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        PIkkuna.ilmoita("Ohjeet: Vasen painike valitsee lähtöruudun ja oikea kohderuudun");
         Pelilauta pelilauta = new Pelilauta(3,3);        
         Pelaaja pelaaja1 = new Pelaaja("S",Color.BLUE);
         Pelaaja pelaaja2 = new Pelaaja("P", Color.RED);        

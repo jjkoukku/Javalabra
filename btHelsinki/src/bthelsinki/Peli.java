@@ -14,9 +14,10 @@ public class Peli {
     private Ruutu hqRuutuP1; //päämaja- ja aloitusruudut
     private Ruutu hqRuutuP2;
     private boolean peliLoppu = false;
+    private Pelaaja voittaja;
     
-    private int kiintJoukLisys= 7;
-    private int ruudJoukLisays=2;
+    private int kiintJoukLisys= 7;  // ie. paljon saa riippumatta ruutujen määrästä
+    private int ruudJoukLisays=2;   // paljon jokainen ruutu tuo lisää yksikköjä / vuoro
 
     public Peli(Pelilauta pelilauta, Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelilauta = pelilauta;
@@ -69,13 +70,20 @@ public class Peli {
         pelilauta.luoYksikoita(pelaaja.getHq(), ruutujenLKM);
     }
     
-    public boolean loppuukoPeli(){
+    public boolean onkoPeliOhi(){
         this.peliLoppu = true;
         if(hqRuutuP1.getOmistaja()==pelaaja1 
                 && hqRuutuP2.getOmistaja()==pelaaja2) {
             peliLoppu = false;
         }
+        if(peliLoppu && this.getVoittaja()==null){
+            this.voittaja = this.vuorossaOleva;
+        }
         return peliLoppu;
+    }
+    
+    public Pelaaja getVoittaja(){
+        return voittaja;    
     }
     
 }

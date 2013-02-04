@@ -53,13 +53,13 @@ public class PeliTest {
     
     @Test
     public void pelinLoppumisMuuttujaToimiiKunEpaTosi(){     
-        assertEquals(peli.loppuukoPeli(),false);
+        assertEquals(peli.onkoPeliOhi(),false);
     }
     
     @Test
     public void pelinLoppumisMuuttujaToimiiKunTosi(){
         pelaaja1.getHq().setOmistaja(pelaaja2);        
-        assertEquals(peli.loppuukoPeli(),true);
+        assertEquals(peli.onkoPeliOhi(),true);
     }
     
     @Test

@@ -1,16 +1,15 @@
 package gui;
 
+import bthelsinki.Peli;
 import gui.kuuntelijat.OhPaVuoroKuuntelija;
 import gui.kuuntelijat.SiirraPaKuuntelija;
-import bthelsinki.Peli;
 import java.awt.Color;
 import java.awt.GridLayout;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
-import java.lang.Integer;
-import javax.swing.BorderFactory;
 
 public class Ohjauspaneeli {
 

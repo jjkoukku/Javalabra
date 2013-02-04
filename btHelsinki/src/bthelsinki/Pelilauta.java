@@ -1,8 +1,5 @@
 package bthelsinki;
 
-import java.util.ArrayList;
-import java.lang.Math;
-
 public class Pelilauta {
 
     private int leveys;
@@ -47,14 +44,12 @@ public class Pelilauta {
     public Siirto siirtokasky(int[] lahto, int[] kohde, int maara, Pelaaja pelaaja) {
         Siirto siirtotiedot;
         Ruutu lahtoRuutu = this.getRuutu(lahto[0], lahto[1]);
-        Ruutu kohdeRuutu = this.getRuutu(kohde[0], kohde[1]);
-        
+        Ruutu kohdeRuutu = this.getRuutu(kohde[0], kohde[1]);        
         if (Tarkistukset(lahtoRuutu, kohdeRuutu, pelaaja, maara)) {
             siirtotiedot = new Siirto(lahtoRuutu, kohdeRuutu, maara, pelaaja); // toistaseksi turhatoiminto...
             this.siirra(lahtoRuutu, kohdeRuutu, maara, pelaaja);
         } else {
             siirtotiedot = new Siirto(false);
-            System.out.println("Siirto ei ollut laillinen");
         }
 
         return siirtotiedot;
@@ -62,11 +57,21 @@ public class Pelilauta {
 
     private void siirra(Ruutu lahto, Ruutu loppu, int maara, Pelaaja pelaaja) {
         if (pelaaja == loppu.getOmistaja()) { // rauhanomainen siirtyminen
-            lahto.setYksikot(lahto.getYksikot() - maara);
-            loppu.setYksikot(loppu.getYksikot() + maara);
-            System.out.println("Ei taistelua");
+            this.omaRuutuSiirto(lahto, loppu, maara);
         }
         if (pelaaja != loppu.getOmistaja()) { // Ei todellakaan rauhanomainen siirtyminen
+            this.vihRuutuSiirto(lahto, loppu, maara, pelaaja);
+        }
+
+    }
+    
+    private void omaRuutuSiirto(Ruutu lahto, Ruutu loppu, int maara){
+            lahto.setYksikot(lahto.getYksikot() - maara);
+            loppu.setYksikot(loppu.getYksikot() + maara);
+            System.out.println("Ei taistelua");   
+    }
+    
+    private void vihRuutuSiirto(Ruutu lahto, Ruutu loppu, int maara, Pelaaja pelaaja) {
             lahto.setYksikot(lahto.getYksikot() - maara); // sotilaat lähtevät
             int[] tulokset;
             tulokset = Taistelu.taistele(maara, loppu.getYksikot()); // sotilaat taistelevat
@@ -77,11 +82,8 @@ public class Pelilauta {
             } else {
                 lahto.setYksikot(lahto.getYksikot() + tulokset[0]);
             }
-
-        }
-
     }
-
+    
     private boolean Tarkistukset(Ruutu lahtoRuutu, Ruutu kohdeRuutu, Pelaaja pelaaja, int maara) {
         boolean tarkistukset = false;
         //kriittiset kaatumisen estämiseksi
