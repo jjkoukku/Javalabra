@@ -6,12 +6,15 @@ public class Siirto {
     public Siirto(Ruutu lahto, Ruutu loppu, int maara, Pelaaja pelaaja){
         
     }
-    
+    /**
+     * Luodaan jos siirto ei ollut laillinen ja ei aiheuttanut muutoksia laudalla
+     * @param eiToimi 
+     */
     public Siirto(boolean eiToimi){
         onnistuko = false;
     }
-    
-    public boolean Onnistuko(){
+
+    public boolean getOnnistuko(){
         return onnistuko;
     }
 }

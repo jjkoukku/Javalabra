@@ -11,22 +11,29 @@ import javax.swing.SwingUtilities;
 public class SiirraPaKuuntelija implements ActionListener {
     Peli peli;
     Ohjauspaneeli ohPanel;
-   
+   /**
+    * Luo Siirrä painikkeen kuuntelijan
+    * @param peli peliloogikan olio, jonka kanssa GUI on vuorovaikutuksessa.
+    * @param ohPanel GUI Ohjauspaneeli
+    */
     public SiirraPaKuuntelija(Peli peli,Ohjauspaneeli ohPanel ){
         this.peli=peli;
         this.ohPanel = ohPanel;
     }
-            
+            /** Pyytää peliä tekemään siirron.
+             * Siirron jälkeen tarkistaa onko peli ohi, ja mikäli on, piilottaa
+             * ohjauspaneelin ja estää täten pelin jatkumisen.
+             * @param ae 
+             */
     @Override
     public void actionPerformed(ActionEvent ae) {       
         
-        if (peli.onkoPeliOhi() == false) {
         peli.siirra(ohPanel.getLNaatit(), ohPanel.getKNaatit(), ohPanel.getJoukot());
         ohPanel.getRuudukko().paivitaRuudut();
-        }        
-        
+                        
         if (peli.onkoPeliOhi()) {
-            PIkkuna.ilmoita("Pelaaja '" + peli.getVoittaja() + "' voitti pelin. Kiitos ja näkemiin!");          
+            PIkkuna.ilmoita("Pelaaja '" + peli.getVoittaja() + "' voitti pelin. Kiitos ja näkemiin!");
+            ohPanel.setVisibility(false);
         }
         
     }

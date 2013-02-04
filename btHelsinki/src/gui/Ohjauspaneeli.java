@@ -26,6 +26,10 @@ private int joukot=0;
 private Ohjauspaneeli ohPanel;
 private Ruudukko ruudukko;
 
+/**
+ * Luo Pelin perusteella ohjauspaneelin
+ * @param peli Looginen peliolio, jonka kanssa ohjauspaneeli on vuorovaikutuksessa
+ */
     public Ohjauspaneeli(Peli peli) {
         this.peli = peli;        
         paneeli = new JPanel();
@@ -64,6 +68,11 @@ private Ruudukko ruudukko;
         
     }
     
+    /**
+     * Graafinen ruudukko, jonka kanssa ohjauspaneeli on vuorovaikutuksessa
+     * @param ruudukko 
+     */
+    
     public void setRuudukko(Ruudukko ruudukko){
         this.ruudukko=ruudukko;
     }
@@ -76,24 +85,39 @@ private Ruudukko ruudukko;
         return this.paneeli;
     }   
     
-    
+    /**
+     * Ohjauspaneelissa tekstikentässä näkyvän lähtöruudun koordinaatit int-muodosa
+     * @param x
+     * @param y 
+     */
     public void setLahto(int x, int y){
         lahtoNaatit[0]=x;
         lahtoNaatit[1]=y;
         lahtonaatitLab.setText(lahtoNaatit[0] + "," + lahtoNaatit[1]);
     }
-    
+        /**
+     * Ohjauspaneelissa tekstikentässä näkyvän kohderuudun koordinaatit int-muodosa
+     * @param x
+     * @param y 
+     */
     public void setKohde(int x, int y){
         kohdeNaatit[0]=x;
         kohdeNaatit[1]=y;
         kohdenaatitLab.setText(kohdeNaatit[0] + "," + kohdeNaatit[1]);       
     }
-    
+            /**
+     * Ohjauspaneelissa näkyvä siirrettävien joukkojen määrä
+     * @param m 
+     */
     public void setJoukot(int m){
         joukot = m;
         joukotTxt.setText("" + m);
     }   
-    
+    /**
+     * Palauttaa ohjauspaneelin Siirrettävien joukkojen määrä parsemalla kokonais-
+     * luvut txt-boxista.
+     * @return 
+     */
     public int getJoukot(){
         return Integer.parseInt(joukotTxt.getText());
     } 
@@ -106,5 +130,8 @@ private Ruudukko ruudukko;
         return kohdeNaatit;
     }
     
+    public void setVisibility(Boolean v){
+        paneeli.setVisible(v);
+    }
     
 }

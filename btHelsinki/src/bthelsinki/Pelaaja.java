@@ -9,11 +9,24 @@ public class Pelaaja{
     private Color vari;
     private Ruutu hq;
 
-    
+    /**
+     * Vuorollisen pelaajan konstruktori
+     * 
+     * @param nimi Pelaajan nimi
+     * @param bari Pelaajan väri
+     * @
+     */
     public Pelaaja(String nimi, Color vari) { // tavalliselle pelaajalle annetaan nimi
         this.nimi = nimi;
         this.vari = vari;
     }
+    
+    /**
+     * Tyhjien ruutujuen passiivinen pelaaja
+     * 
+     * @param 
+     * 
+     */
     
     public Pelaaja() {            // tyhjien ruutujen käyttäjä luodaan tällä konstruktorilla
         this.nimi = "h";

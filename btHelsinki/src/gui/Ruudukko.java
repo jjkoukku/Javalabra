@@ -18,6 +18,12 @@ public class Ruudukko {
     private int korkeus;
     private int leveys;
     
+    /**
+     * Luo ruudukon, joka koostuu ruuduista
+     * @param peli Pelilogiikan peliolio, jonka kanssa GUI/ruudukko on vuorovaikutuksessa.
+     * @param ohPanel GUI:n ohjauspaneeli, jonka kanssa ruudukko on vuorovaikutuksessa
+     */
+    
     public Ruudukko(Peli peli, Ohjauspaneeli ohPanel) {
         this.peli = peli;
         this.ohPanel = ohPanel;
@@ -42,6 +48,10 @@ public class Ruudukko {
     public GRuutu getGRuutu(int x,int y){
         return gRuudukko[x][y];
     }
+    /**
+     * Kutsuu jokaisen ruudukon ruudun päivitä metodia, ja päivittää siten kaikki graafiset ruudut
+     * vastaamaan taustalla olevan loogisen pelin todellista tilannetta.
+     */
     
     public void paivitaRuudut(){
         for (int i = 1; i < leveys+1; i++) {

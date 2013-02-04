@@ -13,7 +13,7 @@ import txtUI.TxtUI;
  */
 public class btHelsinki {
 
-    /**
+    /** Enää vain leikkimistä varten olemassaoleva main-metodi
      * @param args the command line arguments
      */
     public static void main(String[] args) {

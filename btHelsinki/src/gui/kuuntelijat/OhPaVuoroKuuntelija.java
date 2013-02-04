@@ -10,13 +10,21 @@ public class OhPaVuoroKuuntelija implements ActionListener {
     Peli peli;
     JLabel teksti;
     Ohjauspaneeli ohPanel;
-    
+    /**
+     * Luo vuoronvaihtumisen painikkeen kuuntelijan
+     * @param peli
+     * @param teksti
+     * @param ohPanel 
+     */
     public OhPaVuoroKuuntelija(Peli peli,JLabel teksti, Ohjauspaneeli ohPanel ){
         this.peli=peli;
         this.teksti = teksti;
         this.ohPanel = ohPanel;
     }
-            
+    /**
+     * Painettaessa jotain painiketta, vuorossa oleva vaihtuu.
+     * @param ae 
+     */
     @Override
     public void actionPerformed(ActionEvent ae) {
         peli.lopetaVuoro();

@@ -19,6 +19,13 @@ public class Peli {
     private int kiintJoukLisys= 7;  // ie. paljon saa riippumatta ruutujen määrästä
     private int ruudJoukLisays=2;   // paljon jokainen ruutu tuo lisää yksikköjä / vuoro
 
+    /**
+     * 
+     * @param pelilauta Annetaan pelilautaluokan olio
+     * @param pelaaja1  pelaaja luokan olio, 1. pelaaja pelissä
+     * @param pelaaja2  pelaaja luokan olio; 2. pelaaja pelissä
+     */
+    
     public Peli(Pelilauta pelilauta, Pelaaja pelaaja1, Pelaaja pelaaja2) {
         this.pelilauta = pelilauta;
         this.pelaaja1 = pelaaja1;
@@ -46,7 +53,9 @@ public class Peli {
     public Pelaaja getvuorossaOleva(){
         return vuorossaOleva;
     }
-    
+  /**
+   * Lopettaa vuoron, jolloin metodi getVuorossaoleva palauttaa eri pelaajan kuin ennen tätä
+   */
     public void lopetaVuoro(){
         if (vuorossaOleva == pelaaja1){
             vuorossaOleva = pelaaja2;
@@ -57,19 +66,27 @@ public class Peli {
         this.lisaaYksikoita(vuorossaOleva);
     }
     
-    public Siirto siirra(int[] lahto, int[] kohde, int maara) {
-        
-        
-        Siirto siirtotiedot = pelilauta.siirtokasky(lahto, kohde, maara, vuorossaOleva);
-        return siirtotiedot;
-        
-    }
+    /**
+     * 
+     * @param lahto Lähtöruudun koordinaattit: muotoa [x,y] jossa x,y ovat koordinaatteja
+     * @param kohde Kohderuudun koordinaattit: muotoa [x,y] jossa x,y ovat koordinaatteja
+     * @param maara Siirrettävien yksiköiden määrä
+     * @return 
+     */
     
+    public Siirto siirra(int[] lahto, int[] kohde, int maara) {             
+        Siirto siirtotiedot = pelilauta.siirtokasky(lahto, kohde, maara, vuorossaOleva);
+        return siirtotiedot;   
+    }
+
     private void lisaaYksikoita(Pelaaja pelaaja){
         int ruutujenLKM = kiintJoukLisys + pelilauta.omistettavatRuudutLkm(pelaaja)*ruudJoukLisays;
         pelilauta.luoYksikoita(pelaaja.getHq(), ruutujenLKM);
     }
-    
+/**
+ * 
+ * @return palauttaa boolean muuttujan True, jos peli on ohi, eli toinen pelaajista on saavuttanut tosien pelaajan HQ:n
+ */
     public boolean onkoPeliOhi(){
         this.peliLoppu = true;
         if(hqRuutuP1.getOmistaja()==pelaaja1 

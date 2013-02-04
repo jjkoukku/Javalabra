@@ -5,8 +5,12 @@ public class Pelilauta {
     private int leveys;
     private int korkeus;
     private Ruutu[][] ruudukko;
-    Ruutu virheRuutu= new Ruutu(); // virheruutu joka ei ole pelattava ja ulkona kaikkialta
-
+    private Ruutu virheRuutu= new Ruutu(); // virheruutu joka ei ole pelattava ja ulkona kaikkialta
+    /**
+     * 
+     * @param leveys pelialudan leveys
+     * @param korkeus pelilaudan korkeus
+     */
     public Pelilauta(int leveys, int korkeus) {
 
         this.leveys = leveys;
@@ -37,10 +41,26 @@ public class Pelilauta {
         }
         return ruutu;
     }
+    
+    /** Lisää ruudussa olevien yksiköiden määrää
+     * 
+     * @param ruutu , ruutu jonka yksiköitä lisätään
+     * @param m , määrä, jolla yksiköitä lisätään
+     */
+    
     public void luoYksikoita(Ruutu ruutu, int m){
         ruutu.setYksikot(ruutu.getYksikot()+m);
     }
-            
+    
+    /**
+     * 
+     * @param lahto siirron lähtöruutu
+     * @param kohde siirron kohderuutu
+     * @param maara siirretävien yksiköiden määrä
+     * @param pelaaja pelaaja, joka kutsuu Siirtokaskya
+     * @return palauttaa Siirto olion, joka kertoo tiedon siirron lopputuloksesta
+     */
+    
     public Siirto siirtokasky(int[] lahto, int[] kohde, int maara, Pelaaja pelaaja) {
         Siirto siirtotiedot;
         Ruutu lahtoRuutu = this.getRuutu(lahto[0], lahto[1]);
@@ -113,6 +133,13 @@ public class Pelilauta {
         }
         return liikkuuko;
     }
+    
+    /** Palauttaa annetun pelaajan omistuksessa olevien ruutujen määrän
+     * 
+     * @param pelaaja Pelaaja jonka omistuksessa olevat ruudut halutaan tietää
+     * @return Pelaajan omistuksessa olevat ruudut
+     */
+    
     public int omistettavatRuudutLkm(Pelaaja pelaaja){
         int lkm =0;
         for (int i = 1; i <= korkeus; i++) {

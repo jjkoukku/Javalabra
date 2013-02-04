@@ -13,11 +13,17 @@ public class PaaIkkuna implements Runnable {
 
     private JFrame frame;
     private Peli peli;
-    
+    /**
+     * Luo pelin Gui:n pääikkunan joka sisältää seuraavaksi isoimmat kokonaisuudet:
+     * ruudukon ja ohjauspaneelin.
+     * @param peli 
+     */
     public PaaIkkuna(Peli peli) {
         this.peli = peli;
     }
-
+    /**
+     * Käynnistettäessä suoritettava metodi.
+     */
     @Override
     public void run() {
         frame = new JFrame("Battle of Ruudukko");
@@ -43,9 +49,9 @@ public class PaaIkkuna implements Runnable {
         container.add(ohPanel.getContainer(),BorderLayout.SOUTH);   
     }
 
-    public JFrame getFrame() {
-        return frame;
-    }
+//    public JFrame getFrame() {
+//        return frame;
+//    }
     
     
 }
