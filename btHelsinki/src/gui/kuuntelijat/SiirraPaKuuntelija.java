@@ -2,7 +2,7 @@ package gui.kuuntelijat;
 
 import bthelsinki.Peli;
 import gui.Ohjauspaneeli;
-import gui.PIkkuna;
+import gui.PonIkkuna;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JLabel;
@@ -32,7 +32,7 @@ public class SiirraPaKuuntelija implements ActionListener {
         ohPanel.getRuudukko().paivitaRuudut();
                         
         if (peli.onkoPeliOhi()) {
-            PIkkuna.ilmoita("Pelaaja '" + peli.getVoittaja() + "' voitti pelin. Kiitos ja näkemiin!");
+            PonIkkuna.ilmoita("Pelaaja '" + peli.getVoittaja() + "' voitti pelin. Kiitos ja näkemiin!");
             ohPanel.setVisibility(false);
         }
         

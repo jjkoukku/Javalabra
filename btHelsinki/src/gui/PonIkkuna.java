@@ -2,7 +2,7 @@ package gui;
 
 import javax.swing.JOptionPane;
 
-public class PIkkuna {
+public class PonIkkuna {
     /**
      * Heittää ruutuun Ponnahdusikkuna, jossa on OK-painike.
      * @param viesti Ikkunassa näkyvä viesti

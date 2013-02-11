@@ -1,6 +1,7 @@
 package gui;
 
 import bthelsinki.Peli;
+import gui.kuvahallinta.Taustakuva;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
@@ -18,6 +19,7 @@ public class Ruudukko {
     private GRuutu[][] gRuudukko;
     private int korkeus;
     private int leveys;
+    private Taustakuva bg;
     
     /**
      * Luo ruudukon, joka koostuu ruuduista
@@ -25,9 +27,10 @@ public class Ruudukko {
      * @param ohPanel GUI:n ohjauspaneeli, jonka kanssa ruudukko on vuorovaikutuksessa
      */
     
-    public Ruudukko(Peli peli, Ohjauspaneeli ohPanel) {
+    public Ruudukko(Peli peli, Ohjauspaneeli ohPanel, Taustakuva bg) {
         this.peli = peli;
         this.ohPanel = ohPanel;
+        this.bg = bg;
         this.korkeus = peli.getPelilauta().getKorkeus();
         this.leveys =  peli.getPelilauta().getLeveys();
         GridLayout layout = new GridLayout(korkeus,leveys);
@@ -60,6 +63,7 @@ public class Ruudukko {
             for (int j = 1; j < korkeus+1; j++) {
                 gRuudukko[i][j].paivita();
             }
+            bg.repaint();
         }
     }
             

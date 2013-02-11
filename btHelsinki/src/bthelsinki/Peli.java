@@ -76,7 +76,7 @@ public class Peli {
     
     public Siirto siirra(int[] lahto, int[] kohde, int maara) {             
         Siirto siirtotiedot = pelilauta.siirtokasky(lahto, kohde, maara, vuorossaOleva);
-        return siirtotiedot;   
+        return siirtotiedot;
     }
 
     private void lisaaYksikoita(Pelaaja pelaaja){

@@ -17,6 +17,7 @@ public final class GRuutu extends JLabel  {
     private Peli peli;
     private Ruutu ruutu;
     private Ohjauspaneeli ohPanel;
+    private Color vari = new Color(0,0,0,0);
     /** Luo graafisen ilmentymän ruudusta
      * 
      * @param peli käynnissäolevan pelin olio
@@ -30,9 +31,9 @@ public final class GRuutu extends JLabel  {
         this.ohPanel=ohPanel;
         this.addMouseListener(new RuutuKuuntelija(this, ohPanel));
         this.setHorizontalAlignment(SwingConstants.CENTER);
-        Taustakuva bg = new Taustakuva();
-        this.imageUpdate(bg.getImg(), WIDTH, TOP, TOP, TOP, TOP);
-        this.paivita();        
+        this.paivita();
+        this.setOpaque(true);
+        this.setBackground(this.vari);
         }
  
     /**
@@ -40,9 +41,8 @@ public final class GRuutu extends JLabel  {
      */
     
     public void paivita(){
-        super.setText(""+ruutu.getYksikot());
+        this.setText(""+ruutu.getYksikot());
         this.setBorder(BorderFactory.createLineBorder(ruutu.getOmistaja().getVari(),5));
-
     }
     
     /**
