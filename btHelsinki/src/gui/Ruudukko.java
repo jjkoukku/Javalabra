@@ -42,6 +42,10 @@ public class Ruudukko {
             for (int j = 1; j <= korkeus; j++) {                
                 gRuudukko[i][j]=new GRuutu(peli, peli.getPelilauta().getRuutu(j, i), ohPanel);
                 container.add(gRuudukko[i][j]);
+                if(peli.getPelilauta().getRuutu(j, i).getHq()!=null){
+                    gRuudukko[i][j].setHq(true);
+                    gRuudukko[i][j].paivita();
+                }
             }          
         }        
     }

@@ -1,18 +1,13 @@
 package gui;
 
+import bthelsinki.Peli;
+import gui.kuvahallinta.Taustakuva;
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JTextArea;
-import javax.swing.WindowConstants;
-import bthelsinki.Peli;
-import java.awt.BorderLayout;
-import gui.kuvahallinta.Taustakuva;
-import java.awt.Component;
-import javax.swing.BoxLayout;
 import javax.swing.JLayeredPane;
+import javax.swing.WindowConstants;
 public class PaaIkkuna implements Runnable {
 
     private JFrame frame;
@@ -42,7 +37,7 @@ public class PaaIkkuna implements Runnable {
         luoKomponentit(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
-        frame.setResizable(false);
+//        frame.setResizable(false);
     }
 
     private void luoKomponentit(Container container) {

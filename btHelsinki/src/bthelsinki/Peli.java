@@ -16,8 +16,8 @@ public class Peli {
     private boolean peliLoppu = false;
     private Pelaaja voittaja;
     
-    private int kiintJoukLisys= 7;  // ie. paljon saa riippumatta ruutujen määrästä
-    private int ruudJoukLisays=2;   // paljon jokainen ruutu tuo lisää yksikköjä / vuoro
+    private int kiintJoukLisys= 9;  // ie. paljon saa riippumatta ruutujen määrästä
+    private int ruudJoukLisays=1;   // paljon jokainen ruutu tuo lisää yksikköjä / vuoro
 
     /**
      * 
@@ -80,8 +80,11 @@ public class Peli {
     }
 
     private void lisaaYksikoita(Pelaaja pelaaja){
-        int ruutujenLKM = kiintJoukLisys + pelilauta.omistettavatRuudutLkm(pelaaja)*ruudJoukLisays;
-        pelilauta.luoYksikoita(pelaaja.getHq(), ruutujenLKM);
+        pelilauta.luoYksikoita(pelaaja.getHq(), getYksikkoTuotanto(pelaaja));
+    }
+    
+    public int getYksikkoTuotanto(Pelaaja pelaaja){
+        return kiintJoukLisys + pelilauta.omistettavatRuudutLkm(pelaaja)*ruudJoukLisays;
     }
 /**
  * 
