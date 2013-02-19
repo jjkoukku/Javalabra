@@ -32,6 +32,6 @@ public class OhPaVuoroKuuntelija implements ActionListener {
         ohPanel.getRuudukko().paivitaRuudut();
         teksti.setText("Vuorossa on " + peli.getvuorossaOleva().toString());
         gui.PonIkkuna.ilmoita("Pelaajaan " + peli.getvuorossaOleva() + " joukot tukikohdassa kasvoivat \n"
-                + " yksiköllä" );
+                + peli.getYksikkoTuotanto(peli.getvuorossaOleva()) + " yksiköllä" );
     }
 }

@@ -5,11 +5,7 @@ import gui.kuuntelijat.OhPaVuoroKuuntelija;
 import gui.kuuntelijat.SiirraPaKuuntelija;
 import java.awt.Color;
 import java.awt.GridLayout;
-import javax.swing.BorderFactory;
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextArea;
+import javax.swing.*;
 
 public class Ohjauspaneeli {
 
@@ -19,7 +15,7 @@ private Peli peli;
 private JLabel vuorossaOlevaPelaaja;
 private JLabel lahtonaatitLab;
 private JLabel kohdenaatitLab;
-private JTextArea joukotTxt;
+private JSpinner joukotSpin;
 private int[] lahtoNaatit = {0,0};
 private int[] kohdeNaatit = {0,0};
 private int joukot=0;
@@ -35,8 +31,7 @@ private Ruudukko ruudukko;
         paneeli = new JPanel();
         GridLayout layout = new GridLayout(2,4);
         paneeli.setLayout(layout);
-        
-        
+                
         JLabel lahtoKoordinaattiLabel = new JLabel("Lähtö:");
         lahtonaatitLab = new JLabel(lahtoNaatit[0] + "," + lahtoNaatit[1]);
         lahtonaatitLab.setBackground(Color.white);
@@ -54,8 +49,8 @@ private Ruudukko ruudukko;
         kohdenaatitLab.setBackground(Color.white);
         kohdenaatitLab.setOpaque(true);
         
-        joukotTxt = new JTextArea("0");
-        joukotTxt.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        joukotSpin = new JSpinner(new SpinnerNumberModel());
+        joukotSpin.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         
         paneeli.add(vuorossaOlevaPelaaja);        
         paneeli.add(lahtoKoordinaattiLabel);
@@ -64,8 +59,7 @@ private Ruudukko ruudukko;
         paneeli.add(lopetaNappi);
         paneeli.add(lahtonaatitLab);
         paneeli.add(kohdenaatitLab);
-        paneeli.add(joukotTxt);
-        
+        paneeli.add(joukotSpin);        
     }
     
     /**
@@ -111,7 +105,7 @@ private Ruudukko ruudukko;
      */
     public void setJoukot(int m){
         joukot = m;
-        joukotTxt.setText("" + m);
+        joukotSpin.setValue(new Integer(m));
     }   
     /**
      * Palauttaa ohjauspaneelin Siirrettävien joukkojen määrä parsemalla kokonais-
@@ -119,7 +113,7 @@ private Ruudukko ruudukko;
      * @return 
      */
     public int getJoukot(){
-        return Integer.parseInt(joukotTxt.getText());
+        return joukotSpin.getValue().hashCode();
     } 
     
     public int[] getLNaatit() {
@@ -134,4 +128,7 @@ private Ruudukko ruudukko;
         paneeli.setVisible(v);
     }
     
+    
+
 }
+    
