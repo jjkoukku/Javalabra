@@ -28,7 +28,7 @@ public class PaaIkkuna implements Runnable {
      */
     @Override
     public void run() {
-        frame = new JFrame("Battle of Ruudukko");
+        frame = new JFrame("Battle of Helsinki");
         bg = new Taustakuva();
         this.leveys = bg.getPreferredSize().width;
         this.korkeus = bg.getPreferredSize().height;
