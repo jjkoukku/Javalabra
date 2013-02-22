@@ -3,4 +3,4 @@ Graafiselle käyttöliittymälle ei rakennettu automaattista testausta. Oman tes
 
 Havaitut bugit:
 -Liian pienellä näytöllä ajettaessa kartta ei tulostu kokonaan näytölle
--Jos numerokenttään syöttää ns. double arvoja, ottaa kenttä vastaan ensimmäisen kokonaisluvun. Esim 3.5 tuottaa 3.
+-Jos numerokenttään syöttää ns. double arvoja, ottaa kenttä vastaan ensimmäisen kokonaisluvun. Esim 3.5 tuottaa 3. Huom! Bugikorjattu disabloimalla numeroiden manuaalinen syöttö

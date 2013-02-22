@@ -51,6 +51,10 @@ private Ruudukko ruudukko;
         
         joukotSpin = new JSpinner(new SpinnerNumberModel());
         joukotSpin.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        JSpinner.DefaultEditor editor = ( JSpinner.DefaultEditor ) joukotSpin.getEditor();
+        editor.getTextField().setEnabled(true);
+        editor.getTextField().setEditable( false );
+        
         paneeli.add(vuorossaOlevaPelaaja);        
         paneeli.add(lahtoKoordinaattiLabel);
         paneeli.add(kohdeKoordinaattiLabel);
