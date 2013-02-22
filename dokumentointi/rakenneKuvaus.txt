@@ -1,0 +1,12 @@
+Ohjelman rakenne
+
+Pelin logiikka-luokat ovat 'bthelsinki'-pakkauksessa. Peli-luokan olio hallinoi vuoroja ja käskee pelilauta luokan oliota siirroissa. Pelilauta tekee siirtokäskyt käytännössä  ja tarkistaa ensin, että ne ovat laillisia. 
+
+Pelilauta luokka sisältää myös laudan ruudut, jotka ovat niin ikään olioita. Ruutujen tehtävänä on tietää omistaja, yksikköjen määrä ja se, että onko ruutu pelattava. Esimerkiksi haluttaessa vesiruudut voitaisiin laittaa sellaisiksi, että niihin ei voi liikkua. Ruudut tietävät lisäksi oman sijantinsa laudalla. Siirto-luokka on käytännössä turha (boolean muuttuja ajaisi nykyistä tehtävää), mutta se tuo laajennettavuutta.
+
+Pelilogiikassa on myös staattinen taistelu-luokka ja pelaaja luokka. Pelaaja-luokka sisältää tarpeelliset tiedot pelaajasta, ja taistelu luokka hoitaa taistelut. Pelilauta luokan heiniä on kutsua taistelu luokkaa, mikäli se näkee aihetta siihen.
+
+GUI:
+
+Main luo pelin antaen sille peli- ja pelilautaoliot.  Paaikkuna olio on ohjelma pääikkuna ja se pitää sisällään 'ruudukko' olion ja ohjauspaneelin. Ruudukko-olio on analoginen pelilogiikan pelilaudalle, kuten GRuutu (graafinen ruutu) on pelilogiikan ruudulle. Ruudut ovat läpinäkuultavia pelaajalle määritetyn värin mukaisesti, ja niiden alle kuvanhallinta pakkauksen taustakuva-olio näyttää kartan. Ohjauspaneeli ja ja Ruudukko tuntevat toinen toisensa, koska ne myös kutsuvat toinen toisiaan. Tämän lisäksi on Ponikkuna-luokka, joka on vastuustta pelin ponnahdusikkunoista, aina tarvittaessa.
+
