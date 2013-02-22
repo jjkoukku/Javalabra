@@ -37,7 +37,7 @@ public class PaaIkkuna implements Runnable {
         luoKomponentit(frame.getContentPane());
         frame.pack();
         frame.setVisible(true);
-//        frame.setResizable(false);
+        frame.setResizable(false);
     }
 
     private void luoKomponentit(Container container) {
