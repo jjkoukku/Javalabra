@@ -37,7 +37,7 @@ public class Pelilauta {
             ruutu = ruudukko[x - 1][y - 1];
         } else {
             ruutu = virheRuutu;
-            System.out.println("Viittaus laudan ulkopuoliseen ruutuun");
+
         }
         return ruutu;
     }
@@ -87,8 +87,7 @@ public class Pelilauta {
     
     private void omaRuutuSiirto(Ruutu lahto, Ruutu loppu, int maara){
             lahto.setYksikot(lahto.getYksikot() - maara);
-            loppu.setYksikot(loppu.getYksikot() + maara);
-            System.out.println("Ei taistelua");   
+            loppu.setYksikot(loppu.getYksikot() + maara);   
     }
     
     private void vihRuutuSiirto(Ruutu lahto, Ruutu loppu, int maara, Pelaaja pelaaja) {

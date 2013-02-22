@@ -1,3 +1,5 @@
+package pelitestit;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -34,8 +36,6 @@ public class TaisteluTest {
         puolustusjoukot += testi[1];
         hyokkaysjoukot  += testi[0];
         }
-        System.out.println(puolustusjoukot);
-        System.out.println(hyokkaysjoukot);
     assertEquals(puolustusjoukot>hyokkaysjoukot,true);     
   }
     

@@ -48,14 +48,12 @@ public class RuutuKuuntelija implements MouseListener {
     public void mousePressed(MouseEvent e) {
         if (e.getButton() == 1) {
             ohPanel.setLahto(ruutu.getX(), ruutu.getY());
-            System.out.println(ruutu.getX()+ "," + ruutu.getY());
+ 
             ohPanel.setJoukot(ruutu.getYksikot());
         }
         else if (e.getButton() == 3) {
             ohPanel.setKohde(ruutu.getX(), ruutu.getY());
-            System.out.println(ruutu.getX()+ "," + ruutu.getY());
         } else {
-            System.out.println("Näppäimelle ei ole määritelty tehtävää");
         }
     }
 /**

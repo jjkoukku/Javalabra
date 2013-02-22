@@ -1,15 +1,14 @@
-/**
- * Kopioitu oraclen java-tutoriaalista, ei pysy kauaa tässä muodossa.
- */
 
 package gui.kuvahallinta;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.image.*;
-import java.io.*;
-import javax.imageio.*;
-import javax.swing.*;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
  
 
 public class Taustakuva extends Component {

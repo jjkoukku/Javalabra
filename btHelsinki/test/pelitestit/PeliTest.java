@@ -1,3 +1,5 @@
+package pelitestit;
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -66,7 +68,7 @@ public class PeliTest {
     public void yksikoidenlisaaminenToimiiKunVuoroVaihtuu(){
         peli.lopetaVuoro();
         peli.lopetaVuoro();
-        assertEquals(pelaaja1.getHq().getYksikot(),19);
+        assertEquals(pelaaja1.getHq().getYksikot(),20);
     }
     
 }
