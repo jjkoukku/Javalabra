@@ -51,7 +51,6 @@ private Ruudukko ruudukko;
         
         joukotSpin = new JSpinner(new SpinnerNumberModel());
         joukotSpin.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        
         paneeli.add(vuorossaOlevaPelaaja);        
         paneeli.add(lahtoKoordinaattiLabel);
         paneeli.add(kohdeKoordinaattiLabel);

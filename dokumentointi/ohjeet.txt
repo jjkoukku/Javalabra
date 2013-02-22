@@ -1,0 +1,12 @@
+Ohjeet:
+
+Hiiren vasemmalla painikkeella käyttäjä valitsee ruudun josta siirtää yksiköitä ja oikealla valitsee kohderuudun. Siirto suoritetaan painamalla siirrä-painiketta. Pelaaja voi vuoronsa aikan siirtä vapaasti niin monta kertaa kuin haluaa. Kun pelaaja haluaa lopettaa vuoron, on painettava 'Lopeta vuoro' -painiketta.
+
+Pelin tavoite: Valloittaa vastustajan HQ eli päämaja ruutu.
+
+Muuta: 
+
+-Joka kierroksen alussa omat joukot lisääntyvät kaavan (9 + omistettujen ruutujen määrä) mukaisesti päämajassa.
+-Puolustajalla on 30 % bonus taistelussa.
+-Oletusarvo siirrettävien joukkojen määrälle on aina ruudun koko sisältö. Aina painattessa ruutua, siirtyy kaikki ruudun joukot siirretävät yksiköt kenttään.
+

@@ -1,17 +1,15 @@
 Aihemäärittely
 
-Aihe: Risk -tyylinen strategiapeli ( ja mahdollisesti taustamiljöö ja teema Helsingin ympäristössä).
+Aihe: Risk -tyylinen strategiapeli Helsingin ympäristössä.
 
-Käyttäjiä on yksi Pelaaja
+Käyttäjiä: kaksi Pelaaja.
 
 Toiminnot:
 
-Jakaa saamansa yksiköt omistamilleen alueille
-
-Hyökätä yksiköillään ei omistetuille alueille
+-Siirtää yksiköitä
+-Hyökätä
+-Lopettaa vuoro
 
 Muuta:
 
-AI-passiiviinen/ täysin randomoitu. Tämän lisäksi mahd. random-eventtejä.
-
-Mahdollisesti erillaisia yksiköitä.
+Peli loppuu, kun jompikumpi pelaajista on menettänyt oman päämajansa.

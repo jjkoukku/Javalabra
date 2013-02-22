@@ -1,0 +1,6 @@
+Graafiselle käyttöliittymälle ei rakennettu automaattista testausta. Oman testaamisen lisäksi, peli annettiin pelattavaksi yhdelle ulkopuoliselle henkilölle. Testi henkilö ei löytänyt pelin toiminnasta moitittavaa.
+
+
+Havaitut bugit:
+-Liian pienellä näytöllä ajettaessa kartta ei tulostu kokonaan näytölle
+-Jos numerokenttään syöttää ns. double arvoja, ottaa kenttä vastaan ensimmäisen kokonaisluvun. Esim 3.5 tuottaa 3.
